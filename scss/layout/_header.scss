@@ -42,9 +42,9 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        &__carousell {
+        &__carousel {
             position: relative;
-            overflow: auto;
+            overflow: hidden;
             margin-inline: 2rem;
             -ms-overflow-style: none;
             scrollbar-width: none;
@@ -57,6 +57,11 @@
                 flex: 0 0 auto;
                 animation: constant-scroll 25s infinite linear;
                 padding-inline-end: 1rem;
+
+                img {
+                    border-radius: 1rem;
+                    border: 5px inset black;
+                }
             }
 
             
@@ -71,10 +76,6 @@
 }
 
 @keyframes constant-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
 }

@@ -9,8 +9,8 @@
     &__center-divider {
         position: absolute;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        top: 0;
+        transform: translateX(-50%);
         width: 5px;
         height: 95%;
         background-color: black;
@@ -24,12 +24,12 @@
         .timeline__card-container {
             position: relative;
             width: 50%;
-            height: 50rem;
+            height: 60rem;
             
 
             .timeline__card {
                 position: sticky;
-                top: 8rem;
+                top: 0;
                 width: 100%;
                 padding-inline: 2rem;
                 display: flex;
@@ -37,9 +37,8 @@
                 align-items: center;
                 gap: 1rem;
                 align-self: flex-start;
-                animation: appear-left linear;
+                animation: appears linear;
                 animation-timeline: view();
-                animation-range: entry 0;
 
                 &-img {
                     max-height: 30rem;
@@ -73,13 +72,21 @@
     
 }
 
-@keyframes appear-left {
-    from{
+@keyframes appears {
+    0%{
         opacity: 0;
         scale: 0.5;
     }
-    to{
+    30%{
         opacity: 1;
         scale: 1;
+    }
+    70%{
+        opacity: 1;
+        scale: 1;
+    }
+    100%{
+        opacity: 0;
+        scale: 0.5;
     }
 }

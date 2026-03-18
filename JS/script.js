@@ -43,6 +43,16 @@ const renderTimeline = () => {
     timelineCardsContainer.innerHTML = renderedDates
 }
 
+const centerCards = () => {
+    const timelineCards = timelineCardsContainer.querySelectorAll('.timeline__card')
+    timelineCards.forEach(item => {
+        const cardHeight = item.clientHeight
+        console.log(cardHeight)
+        item.style.top = `calc(55vh - ${cardHeight / 2}px)`
+    })
+    
+}
+
 const titleDisapearOnScroll = () => {
     if (window.scrollY > 350) {
         heroTitle.style.display = 'none'
@@ -51,10 +61,14 @@ const titleDisapearOnScroll = () => {
     }
 }
 
+
+
 window.addEventListener('scroll', () => {
     titleDisapearOnScroll()
 })
 
 document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
+    centerCards()
+    
 })
