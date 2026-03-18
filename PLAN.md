@@ -17,7 +17,7 @@ This project will be a timeline webpage that will take the user through the past
 
 ## steps 
 
-1. - [ ] make initial layout
+1. - [x] make initial layout
     1. nav bar
     2. hero
     3. dial in color scheme

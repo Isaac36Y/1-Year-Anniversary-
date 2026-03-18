@@ -4,8 +4,8 @@
     flex-direction: column;
     align-items: center;
     padding-block-end: 5rem;
-    background: #F2F0EF;
-    background: linear-gradient(0deg,rgba(242, 240, 239, 1), rgba(252, 188, 35, 0.75) 59%, rgba(179, 218, 231, 1) 85%);
+    background: var(--primary-100);
+    background: linear-gradient(0deg, var(--primary-100), var(--neutral-200) 59%, var(--neutral-400) 85%);
 
     .clouds {
         width: 100%;
@@ -19,8 +19,8 @@
         width: 90%;
         padding-block: 1rem;
         border: 1px solid black;
-        background: rgb(203, 201, 201);
-        background: linear-gradient(to top, rgb(203, 201, 201), rgb(225, 223, 223));
+        background: var(--accent-100);
+        background: linear-gradient(to top, var(--accent-100), var(--primary-100));
         border-radius: 5rem;
         display: flex;
         justify-content: space-evenly;
