@@ -44,13 +44,22 @@
         }
         &__carousell {
             position: relative;
-            display: flex;
-            gap: 1rem;
             overflow: auto;
             margin-inline: 2rem;
             -ms-overflow-style: none;
             scrollbar-width: none;
             z-index: 6;
+            display: flex;
+
+            .carousel-wrapper {
+                display: flex;
+                gap: 1rem;
+                flex: 0 0 auto;
+                animation: constant-scroll 25s infinite linear;
+                padding-inline-end: 1rem;
+            }
+
+            
             &::-webkit-scrollbar {
                 display: none;
             }
@@ -59,4 +68,13 @@
             }
         }
     }
+}
+
+@keyframes constant-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

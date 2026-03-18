@@ -1,5 +1,5 @@
 const heroTitle = document.querySelector('#hero-title')
-const timelineContainer = document.querySelector('#timeline');
+const timelineCardsContainer = document.querySelector('#timeline-cards-container');
 
 const dates = [
     {
@@ -30,15 +30,17 @@ const dates = [
 
 const renderTimeline = () => {
     const renderedDates = dates.map(date => {
-        return `<div class="timeline__card">
-            <p class="timeline__card-date">${date.date}</p>
-            <div class="timeline__card-img"><img src="${date.img}" alt=""  width="500"></div>
-            <h3 class="timeline__card-title">${date.title}</h3>
-            <p class="timeline__card-par">${date.description}</p>
-        </div>`
+        return `<div class="timeline__card-container">
+                    <div class="timeline__card">
+                        <p class="timeline__card-date">${date.date}</p>
+                        <div class="timeline__card-img"><img src="${date.img}" alt=""  width="500"></div>
+                        <h3 class="timeline__card-title">${date.title}</h3>
+                        <p class="timeline__card-par">${date.description}</p>
+                    </div>
+                </div>`
     }).join(" ")
 
-    timelineContainer.innerHTML += renderedDates
+    timelineCardsContainer.innerHTML = renderedDates
 }
 
 const titleDisapearOnScroll = () => {
