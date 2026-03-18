@@ -1,0 +1,47 @@
+.timeline {
+    position: relative;
+    background-color: #F2F0EF;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    padding-block: 5rem;
+
+    &__center-divider {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 5px;
+        height: 95%;
+        background-color: black;
+        border-radius: 5rem;
+    }
+
+    &__card {
+        width: 50%;
+        padding-inline: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        align-self: flex-start;
+
+        &:nth-child(odd) {
+            align-self: flex-end;
+        }
+
+        &-img {
+            max-height: 30rem;
+            width: 25rem;
+            border: 2px solid black;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+
+            img {
+                object-fit: cover;
+                width: 25rem;
+            }
+        }
+    }
+}
