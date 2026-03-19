@@ -1,0 +1,33 @@
+.timeline__cards-container {
+    .timeline__card-container__camping-trip {
+        width: 100%;
+        height: 80rem;
+        background-color: var(--primary-100);
+        animation: appears-no-shrink linear;
+        animation-timeline: view();
+        scroll-snap-align: center;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url(../../Images/21F573C5-606E-43D4-B8B6-137C417ABDAA_1_102_o.jpeg);
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+        }
+
+        .timeline__card-modifier-img-container {
+            display: flex;
+            align-items: center;
+            
+            >div:not(.selected) {
+                display: none
+            }
+        }
+            
+    }
+}

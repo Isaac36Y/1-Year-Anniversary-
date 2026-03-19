@@ -1,3 +1,5 @@
+
+
 .timeline {
     position: relative;
     background-color: #F2F0EF;
@@ -19,13 +21,13 @@
         display: flex;
         flex-direction: column;
         gap: 10rem;
-
+        
         .timeline__card-container {
             position: relative;
             width: 50%;
             height: 60rem;
             
-
+            
             .timeline__card {
                 position: sticky;
                 top: 0;
@@ -66,9 +68,27 @@
                 }
         }
     
-    
     }
     
+}
+
+@keyframes appears-no-shrink {
+    0%{
+        opacity: 0;
+
+    }
+    30%{
+        opacity: 1;
+
+    }
+    70%{
+        opacity: 1;
+
+    }
+    100%{
+        opacity: 0;
+
+    }
 }
 
 @keyframes appears {

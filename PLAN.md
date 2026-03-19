@@ -22,8 +22,8 @@ This project will be a timeline webpage that will take the user through the past
     2. hero
     3. dial in color scheme
     4. hard code a few images with notes to style timeline layout
-2. - [ ] write JS to populate DOM with dates, notes, images
-3. - [ ] work on scroll effects
+2. - [x] write JS to populate DOM with dates, notes, images
+3. - [x] work on scroll effects
 4. - [ ] make nav bar highlighter match the date thats been scrolled to &rarr; make nav bar click scroll to the date that was clicked
 5. - [ ] add horizontal scroll on larger events
 6. - [ ] add audio player that has a pause, play, skip, and previous button
