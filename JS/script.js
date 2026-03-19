@@ -46,19 +46,23 @@ const dates = [
 const renderTimeline = () => {
     const renderedDates = dates.map(date => {
         if (date.modifierClass) {
+            let id = 0
             const imgAndDesc = date.img.map(img => {
-                return `<div>
-                            <div class="timeline__card-img"><img src="${img.src}" alt=""  width="500"></div>
+                id++
+                return `<div id="${date.modifierClass}-${id}">                                                            
+                            <div class="timeline__card-img"><img src="${img.src}" alt=""  width="500"></div>                            
                             <p class="timeline__card-par">${img.description}</p>
                         </div>
                         `
             }).join("")
-            return `<div class="timeline__card-container timeline__card-container__${date.modifierClass} event">
+            return `<div class="timeline__card-container timeline__card-container__${date.modifierClass} event" id="${date.modifierClass}">
                     <div class="timeline__card ">
                         <p class="timeline__card-date">${date.date}</p>
                         <h2 class="timeline__card-title">${date.title}</h3>
-                        <div class="timeline__card-modifier-img-container">
-                        ${imgAndDesc}
+                        <div class="timeline__card-modifier-img-container" id="${date.modifierClass}-slider">
+                            <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-previous-btn">←</button>
+                            ${imgAndDesc}
+                            <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-next-btn">→</button>
                         </div>
                     </div>
                 </div>`
@@ -76,8 +80,22 @@ const renderTimeline = () => {
     setTimeout(() => {
         selectFirstImgInEvents()
         centerCards()
-        
+
     }, 50)
+}
+
+const changeEventImg = (event, direction) => {
+    const modifier = timelineCardsContainer.querySelector(`#${event}`)
+    const slider = modifier.querySelector(`#${event}-slider`)
+    const sliderImgs = slider.querySelectorAll(':scope > div')
+    const selectedImg = [...sliderImgs].findIndex(img => img.classList.contains('selected'))
+    const newSlide = direction === 'next' 
+        ? slider.querySelector(`#${event}-${selectedImg + 2}`)
+        : slider.querySelector(`#${event}-${selectedImg}`)
+
+    if (!newSlide) return 
+    sliderImgs.forEach(img => img.classList.remove('selected'))
+    newSlide.classList.add('selected')
 }
 
 const selectFirstImgInEvents = () => {
@@ -85,7 +103,7 @@ const selectFirstImgInEvents = () => {
 
     eventCards.forEach(card => {
         const imgContainer = card.querySelector('.timeline__card-modifier-img-container')
-        const firstImg =  imgContainer.firstElementChild
+        const firstImg =  imgContainer.querySelector('div')
         firstImg.classList.add('selected')
     })
 }
@@ -108,7 +126,15 @@ const titleDisapearOnScroll = () => {
     }
 }
 
-
+timelineCardsContainer.addEventListener('click', (e) => {
+    if (e.target.id === 'camping-trip-next-btn') {
+        changeEventImg('camping-trip', 'next')
+        centerCards()
+    }else if (e.target.id === 'camping-trip-previous-btn') {
+        changeEventImg('camping-trip', 'previous')
+        centerCards()
+    }
+})
 
 window.addEventListener('scroll', () => {
     titleDisapearOnScroll()

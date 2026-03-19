@@ -23,10 +23,22 @@
         .timeline__card-modifier-img-container {
             display: flex;
             align-items: center;
+            gap: 2rem;
             
+            .timeline__modifier-slides-button {
+                background-color: var(--primary-100);
+                height: 3rem;
+                width: 3rem;
+                border-radius: 5rem;
+            }
+
             >div:not(.selected) {
                 display: none
-            }
+            }            
+
+            
+                
+            
         }
             
     }
