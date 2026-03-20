@@ -61,7 +61,9 @@ const renderTimeline = () => {
                         <h2 class="timeline__card-title">${date.title}</h3>
                         <div class="timeline__card-modifier-img-container" id="${date.modifierClass}-slider">
                             <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-previous-btn">←</button>
+                            <div class="timeline__card-modifier-slider-container">
                             ${imgAndDesc}
+                            </div>
                             <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-next-btn">→</button>
                         </div>
                     </div>
@@ -87,7 +89,7 @@ const renderTimeline = () => {
 const changeEventImg = (event, direction) => {
     const modifier = timelineCardsContainer.querySelector(`#${event}`)
     const slider = modifier.querySelector(`#${event}-slider`)
-    const sliderImgs = slider.querySelectorAll(':scope > div')
+    const sliderImgs = modifier.querySelectorAll('.timeline__card-modifier-slider-container > div')
     const selectedImg = [...sliderImgs].findIndex(img => img.classList.contains('selected'))
     const newSlide = direction === 'next' 
         ? slider.querySelector(`#${event}-${selectedImg + 2}`)
@@ -103,7 +105,7 @@ const selectFirstImgInEvents = () => {
 
     eventCards.forEach(card => {
         const imgContainer = card.querySelector('.timeline__card-modifier-img-container')
-        const firstImg =  imgContainer.querySelector('div')
+        const firstImg =  imgContainer.querySelector('.timeline__card-modifier-slider-container > div:first-child')
         firstImg.classList.add('selected')
     })
 }

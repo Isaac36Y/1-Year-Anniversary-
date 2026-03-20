@@ -24,6 +24,17 @@
             display: flex;
             align-items: center;
             gap: 2rem;
+
+            .timeline__card-modifier-slider-container {
+                display: flex;
+                align-items: center;
+                height: 29.75rem;
+                
+
+                >div:not(.selected) {
+                    display: none
+                } 
+            }
             
             .timeline__modifier-slides-button {
                 background-color: var(--primary-100);
@@ -32,9 +43,7 @@
                 border-radius: 5rem;
             }
 
-            >div:not(.selected) {
-                display: none
-            }            
+                       
 
             
                 
