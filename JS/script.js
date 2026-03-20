@@ -49,7 +49,7 @@ const renderTimeline = () => {
             let id = 0
             const imgAndDesc = date.img.map(img => {
                 id++
-                return `<div id="${date.modifierClass}-${id}">                                                            
+                return `<div class="timeline__img-desc right-stack" id="${date.modifierClass}-${id}">                                                            
                             <div class="timeline__card-img"><img src="${img.src}" alt=""  width="500"></div>                            
                             <p class="timeline__card-par">${img.description}</p>
                         </div>
@@ -61,7 +61,7 @@ const renderTimeline = () => {
                         <h2 class="timeline__card-title">${date.title}</h3>
                         <div class="timeline__card-modifier-img-container" id="${date.modifierClass}-slider">
                             <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-previous-btn">←</button>
-                            <div class="timeline__card-modifier-slider-container">
+                            <div class="timeline__card-modifier-slider-container" id="card-slider-container">
                             ${imgAndDesc}
                             </div>
                             <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-next-btn">→</button>
@@ -90,14 +90,31 @@ const changeEventImg = (event, direction) => {
     const modifier = timelineCardsContainer.querySelector(`#${event}`)
     const slider = modifier.querySelector(`#${event}-slider`)
     const sliderImgs = modifier.querySelectorAll('.timeline__card-modifier-slider-container > div')
-    const selectedImg = [...sliderImgs].findIndex(img => img.classList.contains('selected'))
+    const selectedImg = [...sliderImgs].findIndex(img => img.classList.contains('selected'));
+    const currentImg = sliderImgs[selectedImg]
+    console.log(currentImg)
     const newSlide = direction === 'next' 
         ? slider.querySelector(`#${event}-${selectedImg + 2}`)
         : slider.querySelector(`#${event}-${selectedImg}`)
 
     if (!newSlide) return 
     sliderImgs.forEach(img => img.classList.remove('selected'))
-    newSlide.classList.add('selected')
+    if ( direction === 'next')  {
+        currentImg.classList.add('left-stack')
+        newSlide.classList.remove('right-stack')
+        newSlide.classList.add('selected')
+        newSlide.style.transform = '';
+        newSlide.style.zIndex = '';
+        modifierCardsStack() 
+    }else {
+        currentImg.classList.add('right-stack')
+        newSlide.classList.remove('left-stack')
+        newSlide.classList.add('selected')
+        newSlide.style.transform = '';
+        newSlide.style.zIndex = '';
+        modifierCardsStack()
+    }
+    
 }
 
 const selectFirstImgInEvents = () => {
@@ -106,6 +123,7 @@ const selectFirstImgInEvents = () => {
     eventCards.forEach(card => {
         const imgContainer = card.querySelector('.timeline__card-modifier-img-container')
         const firstImg =  imgContainer.querySelector('.timeline__card-modifier-slider-container > div:first-child')
+        firstImg.classList.remove('right-stack')
         firstImg.classList.add('selected')
     })
 }
@@ -117,6 +135,24 @@ const centerCards = () => {
         
         item.style.top = `calc(50vh - ${cardHeight / 2}px)`
     })
+}
+
+const modifierCardsStack = () => {
+    const sliderContainer = document.querySelector('#card-slider-container');
+    const rightStack = sliderContainer.querySelectorAll('.timeline__img-desc.right-stack');
+    const leftStack = sliderContainer.querySelectorAll('.timeline__img-desc.left-stack');
+    for (let i = 0; i < rightStack.length; i++) {
+        console.log(rightStack[i])
+        console.log(10 + i * 2)
+        rightStack[i].style.transform = `translate(${160 + i}%, 10.${i * 2}rem) rotate(${10 + i * 2}deg) scale(0.6)`
+        rightStack[i].style.zIndex = `${rightStack.length - [i]}`
+    }
+    for (let i = 0; i < leftStack.length; i++) {
+        console.log(leftStack[i])
+        console.log(10 + i * 2)
+        leftStack[i].style.transform = `translate(-60%, 10rem) rotate(${-10 + i * -2}deg) scale(0.6)`
+        leftStack[i].style.zIndex = `${[i]}`
+    }
     
 }
 
@@ -144,5 +180,7 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
-    
+    setTimeout(() => {
+        modifierCardsStack()
+    }, 100)
 })

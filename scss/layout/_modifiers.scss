@@ -28,12 +28,40 @@
             .timeline__card-modifier-slider-container {
                 display: flex;
                 align-items: center;
-                height: 29.75rem;
-                
+                border: 2px solid black;
+                height: 38rem;
+                width: 85vw;
+                position: relative;
+                overflow: hidden;
 
-                >div:not(.selected) {
-                    display: none
-                } 
+                > div {
+                    img {
+                       height: 20rem; 
+                    }
+                    position: absolute;
+                    top: 3rem;
+                    right: 50%;
+                    transform: translateX(50%);
+                    transition: transform 0.5s ease;
+                    p {
+                        display: none;
+                    }
+                }
+                > div.right-stack {
+                    
+                    transform: translateX(160%, 10rem) rotate(10deg) scale(0.6);
+                }
+
+                > div.selected {
+                    transform: translate(50%) rotate(0deg) scale(1) 1s ease;
+                    z-index: 100;
+                }
+
+                > div.left-stack {
+                    
+                    transform: translateX(-60%) rotate(-10deg) scale(0.6) 1s ease;
+                }
+                
             }
             
             .timeline__modifier-slides-button {
@@ -41,13 +69,7 @@
                 height: 3rem;
                 width: 3rem;
                 border-radius: 5rem;
-            }
-
-                       
-
-            
-                
-            
+            }     
         }
             
     }
