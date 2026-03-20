@@ -28,15 +28,17 @@
             .timeline__card-modifier-slider-container {
                 display: flex;
                 align-items: center;
-                border: 2px solid black;
                 height: 38rem;
                 width: 85vw;
                 position: relative;
                 overflow: hidden;
+                perspective: 1000px;
+                transform-style: preserve-3d;
 
                 > div {
                     img {
-                       height: 20rem; 
+                       max-height: 18rem; 
+                       transition: max-height 0.4s ease;
                     }
                     position: absolute;
                     top: 3rem;
@@ -44,22 +46,22 @@
                     transform: translateX(50%);
                     transition: transform 0.5s ease;
                     p {
-                        display: none;
+                        opacity: 0;
+                        transition: opacity 1s ease;
                     }
-                }
-                > div.right-stack {
-                    
-                    transform: translateX(160%, 10rem) rotate(10deg) scale(0.6);
                 }
 
                 > div.selected {
-                    transform: translate(50%) rotate(0deg) scale(1) 1s ease;
+                    transform: translate(50%) rotate(0deg) scale(1) rotateY(0);
                     z-index: 100;
-                }
 
-                > div.left-stack {
+                    img {
+                        max-height: 30rem;
+                    }
                     
-                    transform: translateX(-60%) rotate(-10deg) scale(0.6) 1s ease;
+                    p {
+                        opacity: 1;
+                    }
                 }
                 
             }

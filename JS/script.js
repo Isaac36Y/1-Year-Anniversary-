@@ -141,16 +141,15 @@ const modifierCardsStack = () => {
     const sliderContainer = document.querySelector('#card-slider-container');
     const rightStack = sliderContainer.querySelectorAll('.timeline__img-desc.right-stack');
     const leftStack = sliderContainer.querySelectorAll('.timeline__img-desc.left-stack');
+    
     for (let i = 0; i < rightStack.length; i++) {
-        console.log(rightStack[i])
-        console.log(10 + i * 2)
-        rightStack[i].style.transform = `translate(${160 + i}%, 10.${i * 2}rem) rotate(${10 + i * 2}deg) scale(0.6)`
+        rightStack[i].style.transform = `translate(${160 + i}%, ${10 + i * .3}rem) rotate(25deg) scale(0.6) rotateY(-90deg)`
         rightStack[i].style.zIndex = `${rightStack.length - [i]}`
     }
     for (let i = 0; i < leftStack.length; i++) {
-        console.log(leftStack[i])
-        console.log(10 + i * 2)
-        leftStack[i].style.transform = `translate(-60%, 10rem) rotate(${-10 + i * -2}deg) scale(0.6)`
+        const distanceFromLast = leftStack.length - 1 - i
+        console.log(distanceFromLast)
+        leftStack[i].style.transform = `translate(${-60 - distanceFromLast}%, ${10 + distanceFromLast * .3}rem) rotate(-25deg) scale(0.6) rotateY(90deg)`
         leftStack[i].style.zIndex = `${[i]}`
     }
     
