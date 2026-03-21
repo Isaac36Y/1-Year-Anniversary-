@@ -12,13 +12,13 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        z-index: 5;
+        z-index: 51;
     }
 
     .nav {
         width: 90%;
         padding-block: 1rem;
-        border: 1px solid black;
+        border: 1px solid #2D2424;
         background: var(--accent-100);
         background: linear-gradient(to top, var(--accent-100), var(--primary-100));
         border-radius: 5rem;
@@ -26,7 +26,19 @@
         justify-content: space-evenly;
         position: fixed;
         top: 2rem;
-        z-index: 100;
+        z-index: 50;
+        animation: scroll-shadow linear;
+        animation-timeline: scroll();
+        animation-range: 0px 700px;
+        animation-fill-mode: forwards;
+
+        button {
+            letter-spacing: 0.1rem;
+            font-family: Quicksand;
+            color: #2D2424;
+            font-weight: 500;
+        }
+        
     }
 
     .hero {
@@ -41,6 +53,10 @@
             top: 10rem;
             left: 50%;
             transform: translateX(-50%);
+            font-family: 'Dancing Script';
+            font-size: 4rem;
+            color: #8d0606;
+            z-index: 1;
         }
         &__carousel {
             position: relative;
@@ -48,8 +64,9 @@
             margin-inline: 2rem;
             -ms-overflow-style: none;
             scrollbar-width: none;
-            z-index: 6;
+            z-index: 51;
             display: flex;
+            padding-block: 1rem;
 
             .carousel-wrapper {
                 display: flex;
@@ -60,7 +77,8 @@
 
                 img {
                     border-radius: 1rem;
-                    border: 5px inset black;
+                    border: 3px inset rgba(45, 36, 36, 0.2);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
                 }
             }
 
@@ -78,4 +96,15 @@
 @keyframes constant-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-100%); }
+}
+
+@keyframes cloud-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes scroll-shadow {
+    0% { box-shadow: 0 -0.5rem 2rem 0 rgba(45, 36, 36, 0.5); }
+    70% { box-shadow: 0 0 1rem 0 rgba(45, 36, 36, 0.5); }
+    100% { box-shadow: 0 0.5rem 1rem 0 rgba(45, 36, 36, 0.3); }
 }
