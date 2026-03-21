@@ -1,0 +1,83 @@
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block-end: 5rem;
+    background: var(--primary-100);
+    background: linear-gradient(0deg, var(--primary-100), var(--neutral-200) 40%, var(--neutral-400) 85%);
+    &__background-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 50;
+        .cloud-wrapper { 
+            flex: 0 0 100%;
+            height: 30rem;
+            animation: cloud-scroll 90s infinite linear;
+           
+            .cloud-one, .cloud-two, .cloud-three, .cloud-four, .cloud-five, .cloud-six, .cloud-seven, .cloud-eight, .cloud-nine, .cloud-ten {
+                position: absolute;
+                
+            }
+            .cloud-one {
+                top: 6rem;
+                left: 8%;
+            }
+            .cloud-two {
+                top: 14rem;
+                left: 15%;
+            }
+            .cloud-three {
+                top: 20rem;
+                left: 23%;
+            }
+            .cloud-four {
+                top: 8rem;
+                left: 35%;
+            }
+            .cloud-five {
+                top: 20rem;
+                left: 0;
+            }
+            .cloud-six {
+                top: 22rem;
+                left: 47%;
+            }
+            .cloud-seven {
+                top: 15rem;
+                left: 60%;
+            }
+            .cloud-eight {
+                top: 5rem;
+                left: 58%;
+            }
+            .cloud-nine {
+                top: 18rem;
+                left: 75%;
+            }
+            .cloud-ten {
+                top: 8rem;
+                left: 90%;
+            }
+
+            &:nth-child(2) {
+                margin-inline-start: -100%; 
+                animation: cloud-scroll-second 90s infinite linear;
+            }
+
+        }
+    }
+}
+
+@keyframes cloud-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+@keyframes cloud-scroll-second {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}

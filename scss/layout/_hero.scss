@@ -1,0 +1,64 @@
+.hero {
+    padding-block-start: 25rem;
+    position: relative;
+
+
+    &__title {
+        text-align: center;
+        word-spacing: 0.5rem;
+        position: fixed;
+        top: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Dancing Script';
+        font-size: 4rem;
+        color: var(--accent-700);
+        z-index: 50;
+        animation: title-disappear linear;
+        animation-timeline: scroll();
+        animation-range: 0px 400px;
+        animation-fill-mode: forwards;
+    }
+    &__carousel {
+        position: relative;
+        overflow: hidden;
+        margin-inline: 2rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        z-index: 51;
+        display: flex;
+        padding-block: 1rem;
+
+        .carousel-wrapper {
+            display: flex;
+            gap: 1rem;
+            flex: 0 0 auto;
+            animation: constant-scroll 25s infinite linear;
+            padding-inline-end: 1rem;
+
+            img {
+                border-radius: 1rem;
+                border: 3px inset var(--neutral-200);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.256);
+            }
+        }
+
+        
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &-img {
+            object-fit: cover;
+        }
+    }
+}
+
+@keyframes constant-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes title-disappear {
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+}

@@ -155,14 +155,6 @@ const modifierCardsStack = () => {
     
 }
 
-const titleDisapearOnScroll = () => {
-    if (window.scrollY > 350) {
-        heroTitle.style.display = 'none'
-    }else {
-        heroTitle.style.display = 'block'
-    }
-}
-
 timelineCardsContainer.addEventListener('click', (e) => {
     if (e.target.id === 'camping-trip-next-btn') {
         changeEventImg('camping-trip', 'next')
@@ -174,7 +166,7 @@ timelineCardsContainer.addEventListener('click', (e) => {
 })
 
 window.addEventListener('scroll', () => {
-    titleDisapearOnScroll()
+
 })
 
 document.addEventListener('DOMContentLoaded', () => {

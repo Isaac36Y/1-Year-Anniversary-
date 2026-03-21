@@ -1,0 +1,30 @@
+.nav {
+    width: 90%;
+    padding-block: 1rem;
+    border: 1px solid var(--accent-700);
+    background: var(--accent-100);
+    background: linear-gradient(to top, var(--accent-100), var(--primary-100));
+    border-radius: 5rem;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 2rem;
+    z-index: 50;
+    animation: scroll-shadow linear;
+    animation-timeline: scroll();
+    animation-range: 0px 700px;
+    animation-fill-mode: forwards;
+
+    button {
+        letter-spacing: 0.1rem;
+        font-family: Quicksand;
+        color: var(--accent-700);
+        font-weight: 500;
+    }     
+}
+
+@keyframes scroll-shadow {
+    0% { box-shadow: 0 -0.5rem 2rem 0 rgba(45, 36, 36, 0.5); }
+    70% { box-shadow: 0 0 1rem 0 rgba(45, 36, 36, 0.5); }
+    100% { box-shadow: 0 0.5rem 1rem 0 rgba(45, 36, 36, 0.3); }
+}
