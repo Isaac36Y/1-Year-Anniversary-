@@ -1,0 +1,13 @@
+{
+    "customFileOrder.rules": {
+        "/Users/sak/Downloads/Dev Proj/1 Year Anniversary /Images/Dates": {
+            "order": [
+                "Feb,2025",
+                "March,2025",
+                "April,2025",
+                "May,2025"
+            ],
+            "type": "manual"
+        }
+    }
+}
