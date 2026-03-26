@@ -27,26 +27,24 @@
             .timeline__card-modifier-slider-container {
                 display: flex;
                 align-items: center;
-                height: 38rem;
+                height: 40rem;
                 width: 85vw;
                 position: relative;
-                overflow: hidden;
                 perspective: 1000px;
                 transform-style: preserve-3d;
 
                 > div {
                     img {
                        max-height: 18rem; 
-                       transition: max-height 0.4s ease;
+                       transition: max-height 0.6s ease;
                     }
                     position: absolute;
-                    top: 3rem;
                     right: 50%;
                     transform: translateX(50%);
-                    transition: transform 0.5s ease;
+                    transition: transform 0.6s ease;
                     p {
                         opacity: 0;
-                        transition: opacity 1s ease;
+                        transition: opacity 0.6s ease;
                     }
                 }
 
@@ -55,7 +53,7 @@
                     z-index: 100;
 
                     img {
-                        max-height: 30rem;
+                        max-height: 34rem;
                     }
                     
                     p {
@@ -79,7 +77,7 @@
         background-image: url(../../Images/21F573C5-606E-43D4-B8B6-137C417ABDAA_1_102_o.jpeg);
     }
     .timeline__card-container__upper-table-rock::before {
-        background-image: url(../../Images/Dates/April,2025/april18.hike/april18-bg.jpeg);
+        background-image: url(../../Images/Dates/April2025/april18-hike/april18-bg.jpg);
     }
     
 }

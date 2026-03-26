@@ -19,13 +19,13 @@ const dates = [
         title: 'Upper Table Rock Hike',
         description: null,
         img: [
-            { src: 'Images/Dates/April,2025/april18.hike/april18-1.jpeg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April,2025/april18.hike/april18-2.jpeg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April,2025/april18.hike/april18-3.jpeg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April,2025/april18.hike/april18-4.jpeg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April,2025/april18.hike/april18-5.jpeg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April,2025/april18.hike/april18-6.jpeg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April,2025/april18.hike/april18-7.jpeg', description: "Our wine and games night. I probably won at uno😉"}
+            { src: 'Images/Dates/April2025/april18-hike/april18-1.jpg', description: "Our wine and games night. I probably won at uno😉"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-2.jpg', description: "Our wine and games night. I probably won at uno😉"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-4.jpg', description: "Our wine and games night. I probably won at uno😉"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-3.jpg', description: "Our wine and games night. I probably won at uno😉"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-5.jpg', description: "Our wine and games night. I probably won at uno😉"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-6.jpg', description: "Our wine and games night. I probably won at uno😉"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-7.jpg', description: "Our wine and games night. I probably won at uno😉"}
         ]
     },
     {

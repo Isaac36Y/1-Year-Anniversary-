@@ -1,7 +1,8 @@
-const heroTitle = document.querySelector('#hero-title')
+import dates from './dates.js'
+
 const timelineCardsContainer = document.querySelector('#timeline-cards-container');
 
-import dates from './dates.js'
+
 
 const renderTimeline = () => {
     const renderedDates = dates.map(date => {
@@ -10,7 +11,7 @@ const renderTimeline = () => {
             const imgAndDesc = date.img.map(img => {
                 id++
                 return `<div class="timeline__img-desc right-stack" id="${date.modifierClass}-${id}">                                                            
-                            <div class="timeline__card-img"><img src="${img.src}" alt=""  width="500"></div>                            
+                            <div class="timeline__card-img"><img src="${img.src}" alt=""  width="768"></div>                            
                             <p class="timeline__card-par">${img.description}</p>
                         </div>
                         `
@@ -21,7 +22,7 @@ const renderTimeline = () => {
                         <h2 class="timeline__card-title">${date.title}</h3>
                         <div class="timeline__card-modifier-img-container" id="${date.modifierClass}-slider">
                             <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-previous-btn">←</button>
-                            <div class="timeline__card-modifier-slider-container" id="card-slider-container">
+                            <div class="timeline__card-modifier-slider-container">
                             ${imgAndDesc}
                             </div>
                             <button type="button" class="timeline__modifier-slides-button" id="${date.modifierClass}-next-btn">→</button>
@@ -31,7 +32,7 @@ const renderTimeline = () => {
         }else return `<div class="timeline__card-container">
                     <div class="timeline__card ">
                         <p class="timeline__card-date">${date.date}</p>
-                        <div class="timeline__card-img"><img src="${date.img}" alt=""  width="500"></div>
+                        <div class="timeline__card-img"><img src="${date.img}" alt=""  width="768"></div>
                         <h2 class="timeline__card-title">${date.title}</h3>
                         <p class="timeline__card-par">${date.description}</p>
                     </div>
@@ -65,14 +66,15 @@ const changeEventImg = (event, direction) => {
         newSlide.classList.add('selected')
         newSlide.style.transform = '';
         newSlide.style.zIndex = '';
-        modifierCardsStack() 
+        modifierCardsStack(event) 
+        
     }else {
         currentImg.classList.add('right-stack')
         newSlide.classList.remove('left-stack')
         newSlide.classList.add('selected')
         newSlide.style.transform = '';
         newSlide.style.zIndex = '';
-        modifierCardsStack()
+        modifierCardsStack(event)
     }
     
 }
@@ -93,27 +95,29 @@ const centerCards = () => {
     timelineCards.forEach(item => {
         const cardHeight = item.clientHeight
         
-        item.style.top = `calc(50vh - ${cardHeight / 2}px)`
+        item.style.top = `calc(55vh - ${cardHeight / 2}px)`
     })
 }
 
-const modifierCardsStack = () => {
-    const sliderContainer = document.querySelector('#card-slider-container');
+const modifierCardsStack = (el) => {
+    const modifier = document.querySelector(`#${el}`)
+    const sliderContainer = modifier.querySelector('.timeline__card-modifier-slider-container');
     const rightStack = sliderContainer.querySelectorAll('.timeline__img-desc.right-stack');
     const leftStack = sliderContainer.querySelectorAll('.timeline__img-desc.left-stack');
     
     for (let i = 0; i < rightStack.length; i++) {
-        rightStack[i].style.transform = `translate(${160 + i}%, ${10 + i * .3}rem) rotate(25deg) scale(0.6) rotateY(-90deg)`
+        rightStack[i].style.transform = `translate(${160 + i}%, ${7 + i * .3}rem) rotate(25deg) scale(0.6) rotateY(-90deg)`
         rightStack[i].style.zIndex = `${rightStack.length - [i]}`
     }
     for (let i = 0; i < leftStack.length; i++) {
         const distanceFromLast = leftStack.length - 1 - i
         console.log(distanceFromLast)
-        leftStack[i].style.transform = `translate(${-60 - distanceFromLast}%, ${10 + distanceFromLast * .3}rem) rotate(-25deg) scale(0.6) rotateY(90deg)`
+        leftStack[i].style.transform = `translate(${-60 - distanceFromLast}%, ${7 + distanceFromLast * .3}rem) rotate(-25deg) scale(0.6) rotateY(90deg)`
         leftStack[i].style.zIndex = `${[i]}`
     }
     
 }
+
 
 timelineCardsContainer.addEventListener('click', (e) => {
     if (e.target.id === 'camping-trip-next-btn') {
@@ -121,6 +125,12 @@ timelineCardsContainer.addEventListener('click', (e) => {
         centerCards()
     }else if (e.target.id === 'camping-trip-previous-btn') {
         changeEventImg('camping-trip', 'previous')
+        centerCards()
+    }else if (e.target.id === 'upper-table-rock-next-btn') {
+        changeEventImg('upper-table-rock', 'next')
+        centerCards()
+    }else if (e.target.id === 'upper-table-rock-previous-btn') {
+        changeEventImg('upper-table-rock', 'previous')
         centerCards()
     }
 })
@@ -132,6 +142,7 @@ window.addEventListener('scroll', () => {
 document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
     setTimeout(() => {
-        modifierCardsStack()
+        modifierCardsStack('camping-trip')
+        modifierCardsStack('upper-table-rock')
     }, 100)
 })
