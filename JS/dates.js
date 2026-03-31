@@ -4,14 +4,14 @@ const dates = [
         modifierClass: null,
         title: 'Our First Date',
         description: "We don't have any pictures together but this is the night that started it all. We sat right at that bar, I had an old fashioned, you had a tequila pineapple, the rest is the best history. I love you💙",
-        img: './Images/Dates/Feb2025/feb14.webp'
+        img: [{ src: './Images/Dates/Feb2025/feb14.webp' }]
     },
     {
         date: "February 15th, 2025",
         modifierClass: null,
         title: 'Scary House',
         description: "Looks like the first date went well😉 Good kisser eh?",
-        img: 'Images/Dates/Feb2025/feb15.jpeg'
+        img: [{ src: './Images/Dates/Feb2025/feb15.jpeg' }]
     },
     {
         date: "April 18th, 2025",
@@ -33,21 +33,21 @@ const dates = [
         modifierClass: null,
         title: 'My birthday',
         description: "We went out for dinner and watched Star Wars Revenge of the sith in theatres. A really great date night and such a nice gift",
-        img: 'Images/Dates/May2025/may1.jpeg'
+        img: [{ src: './Images/Dates/May2025/may1.jpeg' }]
     },
     {
         date: "May 19th, 2025",
         modifierClass: null,
         title: 'AI made a family picture of us😂 ',
         description: "",
-        img: 'Images/Dates/May2025/may19.jpeg'
+        img: [{ src: 'Images/Dates/May2025/may19.jpeg' }]
     },
     {
         date: "May 26th, 2025",
         modifierClass: null,
         title: 'One of our many lunch dates at Comal',
         description: "",
-        img: 'Images/Dates/May2025/may26.jpeg'
+        img: [{ src: 'Images/Dates/May2025/may26.jpeg' }]
     },
     {
         date: "June 26th - June 29th, 2025",
@@ -97,11 +97,16 @@ const dates = [
         ]
     },
     {
-        date: "June 28th, 2025",
+        date: "July 4th, 2025",
         modifierClass: null,
-        title: 'Camping Trip',
-        description: 'Every night we froze our butts off but this night we enjoyed some wine and played games in out tent',
-        img: './Images/AC8332FB-ED4B-46E9-8CF2-6555A49C155A_1_102_o.jpeg'
+        title: 'Fourth of July with our friends',
+        description: null,
+        img: [
+            { src: './Images/Dates/July2025/july4/july4-1.jpeg'},
+            { src: './Images/Dates/July2025/july4/july4-2.jpeg'},
+            { src: './Images/Dates/July2025/july4/july4-3.jpeg'},
+            { src: './Images/Dates/July2025/july4/july4-4.jpeg'}
+        ]
     }
 ]
 

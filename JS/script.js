@@ -11,7 +11,7 @@ const renderTimeline = () => {
             const imgAndDesc = date.img.map(img => {
                 id++
                 return `<div class="timeline__img-desc right-stack" id="${date.modifierClass}-${id}">                                                            
-                            <div class="timeline__card-img"><img src="${img.src}" alt=""  width="768"></div>                            
+                            <div class="timeline__card-img timeline__card-img__modified"><img src="${img.src}" alt=""  width="768"></div>                            
                             <p class="timeline__card-par">${img.description}</p>
                         </div>
                         `
@@ -29,15 +29,24 @@ const renderTimeline = () => {
                         </div>
                     </div>
                 </div>`
-        }else return `<div class="timeline__card-container">
-                    <div class="timeline__card ">
+        }else {
+            let id = 0;
+            const dateId = convertDate(date.date)
+            const imgAndDesc = date.img.map(img => {
+                id++
+                return `<div class="timeline__card-img"><img src="${img.src}" alt="" id="${dateId}-${id}" width="768"></img></div>`
+            }).join("");
+            return `<div class="timeline__card-container">
+                    <div class="timeline__card">
                         <p class="timeline__card-date">${date.date}</p>
-                        <div class="timeline__card-img"><img src="${date.img}" alt=""  width="768"></div>
+                        <div class="timeline__card-imgs">
+                        ${imgAndDesc}
+                        </div>
                         <h2 class="timeline__card-title">${date.title}</h3>
                         <p class="timeline__card-par">${date.description}</p>
                     </div>
                 </div>`
-    }).join(" ")
+        }}).join(" ")
 
     timelineCardsContainer.innerHTML = renderedDates
     setTimeout(() => {
@@ -45,6 +54,20 @@ const renderTimeline = () => {
         centerCards()
 
     }, 50)
+}
+
+const convertDate = (dateStr) => {
+    const cleanedDateString = dateStr.replace(/(\d+)(st|nd|rd|th)/, '$1');
+    const date = new Date(cleanedDateString)
+
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const day = date.getDate().toString().padStart(2, '0')
+    return `${day}-${month}-${year}`
+}
+
+const renderNonModified = (date) => {
+    
 }
 
 const changeEventImg = (event, direction) => {

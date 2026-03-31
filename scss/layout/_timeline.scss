@@ -40,6 +40,7 @@
                 align-self: flex-start;
                 animation: appears linear;
                 animation-timeline: view();
+               
 
                 &-img {
                     max-height: 38rem;
@@ -61,7 +62,6 @@
                     text-align: center;
                 }
 
-
             }
             &:nth-child(even) {
                     align-self: flex-end;
@@ -72,23 +72,6 @@
     
 }
 
-@keyframes appears-no-shrink {
-    0%{
-        opacity: 0;
-    }
-    30%{
-        opacity: 1;
-
-    }
-    70%{
-        opacity: 1;
-
-    }
-    100%{
-        opacity: 0;
-
-    }
-}
 
 @keyframes appears {
     0%{
