@@ -100,14 +100,65 @@ const dates = [
         date: "July 4th, 2025",
         modifierClass: null,
         title: 'Fourth of July with our friends',
-        description: null,
+        description: '',
         img: [
             { src: './Images/Dates/July2025/july4/july4-1.jpeg'},
             { src: './Images/Dates/July2025/july4/july4-2.jpeg'},
             { src: './Images/Dates/July2025/july4/july4-3.jpeg'},
             { src: './Images/Dates/July2025/july4/july4-4.jpeg'}
         ]
-    }
+    },
+    {
+        date: "July 12th, 2025",
+        modifierClass: null,
+        title: 'Date Night',
+        description: "Fun date night at Pomodori and some drinks at beerworks",
+        img: [
+            { src: './Images/Dates/July2025/july12-1.jpeg'},
+            { src: './Images/Dates/July2025/july12-2.jpeg'}
+        ]
+    },
+    {
+        date: "August 10th, 2025",
+        modifierClass: null,
+        title: 'Rainbow Kitten Surprise at Brit',
+        description: "So happy with your bussy shirt😂",  
+        img: [
+            { src: './Images/Dates/August2025/aug10-1.jpeg'},
+            { src: './Images/Dates/August2025/aug10-2.jpeg'},
+            { src: './Images/Dates/August2025/aug10-3.jpeg'},
+            { src: './Images/Dates/August2025/aug10-4.jpeg'},
+            { src: './Images/Dates/August2025/aug10-5.jpeg'}
+        ]
+    },
+    {
+        date: "October 11th, 2025",
+        modifierClass: null,
+        title: 'My marathon',
+        description: "Thanks for being so supportive through all of marathon prep and showing up as my biggest fan on marathon day💙",
+        img: [
+            { src: './Images/Dates/October2025/oct11.jpeg'}
+        ]
+    },
+    {
+        date: "October 18th, 2025",
+        modifierClass: 'pumpkin-patch',
+        title: 'Our day at the pumpkin patch🎃',
+        description: null,
+        img: [
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-1.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-2.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-3.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-4.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-5.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-6.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-7.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-8.jpeg', description: ""},
+            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-9.jpeg', description: ""},
+
+        ]
+    },
+
 ]
 
 export default dates

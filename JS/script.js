@@ -113,15 +113,6 @@ const selectFirstImgInEvents = () => {
     })
 }
 
-const centerCards = () => {
-    const timelineCards = timelineCardsContainer.querySelectorAll('.timeline__card');
-    timelineCards.forEach(item => {
-        const cardHeight = item.clientHeight
-        
-        item.style.top = `calc(55vh - ${cardHeight / 2}px)`
-    })
-}
-
 const modifierCardsStack = (el) => {
     const modifier = timelineCardsContainer.querySelector(`#${el}`)
     const sliderContainer = modifier.querySelector('.timeline__card-modified-slider-container');
@@ -161,16 +152,16 @@ const getImgNaturalWidth = (src) => {
 timelineCardsContainer.addEventListener('click', (e) => {
     if (e.target.id === 'camping-trip-next-btn') {
         changeEventImg('camping-trip', 'next')
-        centerCards()
+        
     }else if (e.target.id === 'camping-trip-previous-btn') {
         changeEventImg('camping-trip', 'previous')
-        centerCards()
+       
     }else if (e.target.id === 'upper-table-rock-next-btn') {
         changeEventImg('upper-table-rock', 'next')
-        centerCards()
+        
     }else if (e.target.id === 'upper-table-rock-previous-btn') {
         changeEventImg('upper-table-rock', 'previous')
-        centerCards()
+        
     }
 })
 
