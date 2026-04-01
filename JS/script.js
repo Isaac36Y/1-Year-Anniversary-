@@ -50,9 +50,10 @@ const renderTimeline = () => {
 
     timelineCardsContainer.innerHTML = renderedDates
     setTimeout(() => {
-        selectFirstImgInEvents()
-        modifierCardsStack('camping-trip')
-        modifierCardsStack('upper-table-rock')
+        selectFirstImgInEvents();
+        modifierCardsStack('camping-trip');
+        modifierCardsStack('upper-table-rock');
+        modifierCardsStack('pumpkin-patch');
        
         
 
@@ -161,7 +162,10 @@ timelineCardsContainer.addEventListener('click', (e) => {
         
     }else if (e.target.id === 'upper-table-rock-previous-btn') {
         changeEventImg('upper-table-rock', 'previous')
-        
+    }else if (e.target.id === 'pumpkin-patch-previous-btn') {
+        changeEventImg('pumpkin-patch', 'previous')
+    }else if (e.target.id === 'pumpkin-patch-next-btn') {
+        changeEventImg('pumpkin-patch', 'next')
     }
 })
 

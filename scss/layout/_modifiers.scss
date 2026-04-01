@@ -1,5 +1,5 @@
 .timeline__cards-container {
-    .timeline__card-section__camping-trip, .timeline__card-section__upper-table-rock {
+    .timeline__card-section__camping-trip, .timeline__card-section__upper-table-rock, .timeline__card-section__pumpkin-patch {
         width: 100%;
         height: 80rem;
         position: relative;
@@ -111,6 +111,10 @@
 
     .timeline__card-section__upper-table-rock::before {
         background-image: url(../Images/Dates/April2025/april18-hike/april18-bg.jpg);
+    }
+
+    .timeline__card-section__pumpkin-patch::before {
+        background-image: url(../Images/Dates/October2025/oct18-punkin-patch/oct18-bg.jpeg);
     }
     
 }
