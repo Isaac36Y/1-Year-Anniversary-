@@ -61,8 +61,14 @@
                             border: 2px solid black;
                         }
                         p {
+                            position: absolute;
+                            bottom: -2.5rem;
+                            left: 50%;
+                            transform: translateX(-50%);
                             opacity: 0;
-                            display: none
+                            width: 100%;
+                            transition: opacity 0.6s ease;
+                            
                         }
                         &.selected {
                             transform: translate(0) rotate(0deg) scale(1) rotateY(0);
@@ -75,24 +81,14 @@
 
                             p {
                                 opacity: 1;
+                                
+
                             }
                         }
                         
                     }
 
                     
-                }
-
-                
-
-                
-                    
-                    
-                    
-                    
-                
-                .timeline__card-img__modified.selected {
-                    transform: translate(50%) rotate(0deg) scale(1) rotateY(0);
                 }
                 
                 .timeline__card-modified-par {
@@ -109,9 +105,10 @@
         }       
     }
 
-    .timeline__card__camping-trip::before {
+    .timeline__card-section__camping-trip::before {
         background-image: url(../Images/21F573C5-606E-43D4-B8B6-137C417ABDAA_1_102_o.jpeg);
     }
+
     .timeline__card-section__upper-table-rock::before {
         background-image: url(../Images/Dates/April2025/april18-hike/april18-bg.jpg);
     }

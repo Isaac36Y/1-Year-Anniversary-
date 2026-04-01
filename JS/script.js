@@ -129,10 +129,8 @@ const modifierCardsStack = (el) => {
     const leftStack = sliderContainer.querySelectorAll('.timeline__img-desc.left-stack');
     
     for (let i = 0; i < rightStack.length; i++) {
-        if (rightStack.length >= 33) {
-            rightStack[i].style.transform = `translate(${160 + i * 0.45}%, ${3 + i * .2}rem) rotate(25deg) scale(0.5) rotateY(-90deg)`
-        }else if (rightStack.length >= 19) {
-            rightStack[i].style.transform = `translate(${160 + i * 0.5}%, ${5 + i * .2}rem) rotate(25deg) scale(0.5) rotateY(-90deg)`
+        if (rightStack.length >= 19) {
+            rightStack[i].style.transform = `translate(${160 + i * 0.5}%, ${5 + i * .2}rem) rotate(25deg) scale(0.6) rotateY(-110deg)`
         }else {
             rightStack[i].style.transform = `translate(${160 + i}%, ${5 + i * .3}rem) rotate(25deg) scale(0.6) rotateY(-110deg)`;
         }
@@ -141,10 +139,8 @@ const modifierCardsStack = (el) => {
     for (let i = 0; i < leftStack.length; i++) {
         const distanceFromLast = leftStack.length - 1 - i
 
-        if (leftStack.length >= 33) {
-            leftStack[i].style.transform = `translate(${-160 - distanceFromLast * 0.45}%, ${3 + distanceFromLast * .2}rem) rotate(-25deg) scale(0.5) rotateY(90deg)`
-        }else if (leftStack.length >= 19) {
-            leftStack[i].style.transform = `translate(${-160 - distanceFromLast * 0.5}%, ${5 + distanceFromLast * .2}rem) rotate(-25deg) scale(0.5) rotateY(90deg)`
+        if (leftStack.length >= 19) {
+            leftStack[i].style.transform = `translate(${-160 - distanceFromLast * 0.5}%, ${5 + distanceFromLast * .2}rem) rotate(-25deg) scale(0.6) rotateY(110deg)`
         }else {
             leftStack[i].style.transform = `translate(${-160 - distanceFromLast}%, ${5 + distanceFromLast * .3}rem) rotate(-25deg) scale(0.6) rotateY(110deg)`;
         }
