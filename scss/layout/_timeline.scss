@@ -20,52 +20,58 @@
     &__cards-container {
         display: flex;
         flex-direction: column;
-        gap: 10rem;
-        
-        .timeline__card-container {
+        gap: 20rem;
+
+        .timeline__section {
+            width: 100%;
             position: relative;
-            width: 50%;
-            height: 80rem;
-            
+            height: 100rem;
             
             .timeline__card {
                 position: sticky;
-                top: 0;
-                width: 100%;
-                padding-inline: 2rem;
+                top: 13vh;
                 display: flex;
-                flex-direction: column;
                 align-items: center;
-                gap: 1rem;
-                align-self: flex-start;
+                flex-direction: column;
+                width: 50%;
                 animation: appears linear;
                 animation-timeline: view();
-               
 
-                &-img {
-                    max-height: 38rem;
-                    max-width: 30rem;
-                    border: 2px solid black;
-                    border-radius: 1rem;
-                    overflow: hidden;
+                &-imgs {
+                    padding-block: 1rem 0.5rem;
                     display: flex;
-                    justify-content: center;
+                    overflow: scroll;
+                    ::-webkit-scrollbar {
+                        display: none;
+                    }
+                    /* For IE, Edge, and Firefox */
+                    -ms-overflow-style: none;  /* IE and Edge */
+                    scrollbar-width: none; 
 
                     img {
+                        border-radius: 0.5rem;
+                        border: 2px solid black;
+                        height: 38rem;
+                        width: 30rem; 
                         object-fit: cover;
-                        
                     }
                 }
-                
 
-                &-title, &-par {
+                &-imgs:has(img:nth-child(2)) {
+                    padding-inline: 5rem;
+                    gap: 1rem;
+                }
+
+                &-par {
+                    width: 70%;
                     text-align: center;
                 }
-
             }
-            &:nth-child(even) {
-                    align-self: flex-end;
-                }
+
+        }
+
+        .timeline__section:nth-child(even) .timeline__card  {
+            margin-inline-start: auto;
         }
     
     }
