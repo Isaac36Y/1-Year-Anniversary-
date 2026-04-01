@@ -158,6 +158,41 @@ const dates = [
 
         ]
     },
+    {
+        date: "November 7th, 2025",
+        modifierClass: null,
+        title: 'Rest In Peace 4 Daughter😢',
+        description: "Fun nights out and an almost split G!",
+        img: [
+            { src: './Images/Dates/November2025/nov7-1.jpeg'},
+            { src: './Images/Dates/November2025/nov7-2.jpeg'},
+            { src: './Images/Dates/November2025/nov7-3.jpeg'}
+        ]
+    },
+    {
+        date: "October 14th - October 17th, 2025",
+        modifierClass: 'san-diego',
+        title: 'San Diego!!',
+        description: null,
+        img: [
+            { src: './Images/Dates/November2025/san-diego/sd-1.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-2.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-3.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-4.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-5.jpg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-6.jpg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-7.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-8.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-9.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-10.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-11.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-12.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-13.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-14.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-15.jpeg', description: ""},
+            { src: './Images/Dates/November2025/san-diego/sd-16.jpeg', description: ""}
+        ]
+    },
 
 ]
 

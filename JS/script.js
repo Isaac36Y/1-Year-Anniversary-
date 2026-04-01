@@ -54,7 +54,7 @@ const renderTimeline = () => {
         modifierCardsStack('camping-trip');
         modifierCardsStack('upper-table-rock');
         modifierCardsStack('pumpkin-patch');
-       
+        modifierCardsStack('san-diego');
         
 
     }, 50)
@@ -166,6 +166,10 @@ timelineCardsContainer.addEventListener('click', (e) => {
         changeEventImg('pumpkin-patch', 'previous')
     }else if (e.target.id === 'pumpkin-patch-next-btn') {
         changeEventImg('pumpkin-patch', 'next')
+    }else if (e.target.id === 'san-diego-previous-btn') {
+        changeEventImg('san-diego', 'previous')
+    }else if (e.target.id === 'san-diego-next-btn') {
+        changeEventImg('san-diego', 'next')
     }
 })
 
