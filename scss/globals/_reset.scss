@@ -20,6 +20,8 @@ html{
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: quicksand;
+  color: var(--accent-700);
 }
 
 img, picture, video, canvas, svg {

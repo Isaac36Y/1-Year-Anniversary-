@@ -29,16 +29,17 @@
             
             .timeline__card {
                 position: sticky;
-                top: 13vh;
+                top: 12vh;
                 display: flex;
                 align-items: center;
                 flex-direction: column;
+                gap: 0.5rem;
                 width: 50%;
                 animation: appears linear;
                 animation-timeline: view();
 
                 &-imgs {
-                    padding-block: 1rem 0.5rem;
+                    padding-block-end: 0.5rem;
                     display: flex;
                     overflow: scroll;
                     ::-webkit-scrollbar {
@@ -50,7 +51,7 @@
 
                     img {
                         border-radius: 0.5rem;
-                        border: 2px solid black;
+                        border: 8px inset var(--accent-700);
                         height: 38rem;
                         width: 30rem; 
                         object-fit: cover;
@@ -62,9 +63,21 @@
                     gap: 1rem;
                 }
 
+                &-date {
+                    font-weight: 600;
+                }
+
+                &-title {
+                    font-family: var(--ff-dancing);
+                    font-size: 2rem;
+                }
+
                 &-par {
-                    width: 70%;
+                    width: 90%;
                     text-align: center;
+                    font-size: 1.3rem;
+                    
+                    
                 }
             }
 

@@ -39,10 +39,10 @@ const renderTimeline = () => {
             return `<div class="timeline__section">
                         <div class="timeline__card">
                             <p class="timeline__card-date">${date.date}</p>
+                            <h2 class="timeline__card-title">${date.title}</h3>
                             <div class="timeline__card-imgs">
                                 ${imgAndDesc}
                             </div>
-                            <h2 class="timeline__card-title">${date.title}</h3>
                             <p class="timeline__card-par">${date.description}</p>
                         </div>
                     </div>`
