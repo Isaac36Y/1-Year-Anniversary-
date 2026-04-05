@@ -1,7 +1,8 @@
 import dates from './dates.js'
 
 const timelineCardsContainer = document.querySelector('#timeline-cards-container');
-
+const navBar = document.querySelector('#nav')
+const indicator = document.querySelector('#nav-indicator')
 
 
 const renderTimeline = () => {
@@ -139,6 +140,20 @@ const modifierCardsStack = (el) => {
     
 }
 
+const changeNavMonthOnclick = (el) => {
+    if (!el) return
+    const months = navBar.querySelectorAll('.nav__buttons')
+    months.forEach(month => month.classList.remove('selected'))
+    el.classList.add('selected')
+    
+    // measure the clicked button and slide indicator to it
+    const btnLeft = el.offsetLeft
+    const btnWidth = el.offsetWidth
+    console.log(btnLeft)
+    indicator.style.transform = `translateX(${btnLeft}px)`
+    indicator.style.width = `${btnWidth}px`
+}
+
 const getImgNaturalWidth = (src) => {
     return new Promise((resolve) => {
         const img = new Image()
@@ -171,6 +186,12 @@ timelineCardsContainer.addEventListener('click', (e) => {
     }
 })
 
+navBar.addEventListener('click', (e) => {
+    const button = e.target.closest('.nav__buttons');
+    console.log(button)
+    changeNavMonthOnclick(button)
+})
+
 
 window.addEventListener('scroll', () => {
 
@@ -178,4 +199,6 @@ window.addEventListener('scroll', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
+    const defaultSelected = navBar.querySelector('.nav__buttons.selected')
+    if (defaultSelected) changeNavMonthOnclick(defaultSelected)
 })
