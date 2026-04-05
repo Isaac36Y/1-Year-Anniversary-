@@ -1,6 +1,6 @@
 .nav {
     width: 90%;
-    padding-block: 1rem;
+
     border: 1px solid var(--accent-700);
     background: var(--accent-100);
     background: linear-gradient(to top, var(--accent-100), var(--primary-100));
@@ -15,12 +15,32 @@
     animation-range: 0px 700px;
     animation-fill-mode: forwards;
 
-    .nav__buttons {
+    &__buttons {
         letter-spacing: 0.1rem;
         font-family: Quicksand;
         color: var(--accent-700);
         font-weight: 500;
-    }     
+        position: relative;
+        width: 100%;
+        padding: 1rem 1rem;
+        z-index: 1;
+
+        &.selected a {
+            color: var(--primary-100);
+        }
+
+        &.selected::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 5rem;
+        background-color: var(--accent-700);
+        z-index: -1;
+    }
+    }   
 }
 
 @keyframes scroll-shadow {
