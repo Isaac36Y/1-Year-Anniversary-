@@ -132,6 +132,26 @@ const dates = [
         ]
     },
     {
+        date: "September 1st, 2025",
+        modifierClass: null,
+        title: 'Your birthday!!',
+        description: "What a special special day! We got some nice massagges and then came home and made homemade spaghetti. Special special person",
+        img: [
+            { src: './Images/Dates/September2025/sept1.jpeg'}
+        ]
+    },
+    {
+        date: "September 21st, 2025",
+        modifierClass: null,
+        title: 'Last day of Summer',
+        description: "Last day of Summer spent watching football and a trip to the lake",
+        img: [
+            { src: './Images/Dates/September2025/sept21-1.jpeg'},
+            { src: './Images/Dates/September2025/sept21-2.jpeg'},
+            { src: './Images/Dates/September2025/sept21-3.jpeg'}
+        ]
+    },
+    {
         date: "October 11th, 2025",
         modifierClass: null,
         title: 'My marathon',
@@ -146,15 +166,15 @@ const dates = [
         title: 'Our day at the pumpkin patch🎃',
         description: null,
         img: [
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-1.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-2.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-3.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-4.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-5.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-6.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-7.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-8.jpeg', description: ""},
-            { src: 'Images/Dates/October2025/oct18-punkin-patch/oct18-9.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-1.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-2.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-3.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-4.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-5.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-6.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-7.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-8.jpeg', description: ""},
+            { src: './Images/Dates/October2025/oct18-punkin-patch/oct18-9.jpeg', description: ""},
 
         ]
     },
@@ -170,7 +190,7 @@ const dates = [
         ]
     },
     {
-        date: "October 14th - October 17th, 2025",
+        date: "November 14th - 17th, 2025",
         modifierClass: 'san-diego',
         title: 'San Diego!!',
         description: null,
@@ -193,6 +213,103 @@ const dates = [
             { src: './Images/Dates/November2025/san-diego/sd-16.jpeg', description: ""}
         ]
     },
+    {
+        date: "December 1st, 2025",
+        modifierClass: null,
+        title: 'I love you',
+        description: "",
+        img: [
+            { src: './Images/Dates/December2025/dec1.jpeg'}
+        ]
+    },
+    {
+        date: "December 6th, 2025",
+        modifierClass: null,
+        title: '',
+        description: "Shout out Jude Law as a single dad with the tiny glasses",
+        img: [
+            { src: '../Images/Dates/December2025/dec6.jpeg'}
+        ]
+    },
+    {
+        date: "December 24th, 2025",
+        modifierClass: null,
+        title: 'Christmas Eve',
+        description: "",
+        img: [
+            { src: './Images/Dates/December2025/dec24.jpeg'},
+            { src: './Images/Dates/December2025/dec24-2.jpeg'},
+            { src: './Images/Dates/December2025/dec24-3.jpeg'},
+            { src: './Images/Dates/December2025/dec24-4.jpeg'}
+        ]
+    },
+    {
+        date: "January 12th, 2026",
+        modifierClass: null,
+        title: "Bailey's a gym girly!!",
+        description: "Phat ass and 22inch biceps",
+        img: [
+            { src: './Images/Dates/January2026/jan12-1.jpeg'},
+            { src: './Images/Dates/January2026/jan12-2.jpeg'},
+            { src: './Images/Dates/January2026/jan12-3.jpeg'}
+        ]
+    },
+    {
+        date: "January 26th, 2026",
+        modifierClass: null,
+        title: 'Sheppys first birthday',
+        description: "The prettiest and best help a party a could ever have",
+        img: [
+            { src: './Images/Dates/January2026/jan26-1.jpeg'},
+            { src: './Images/Dates/January2026/jan26-2.jpeg'},
+            
+        ]
+    },
+    {
+        date: "February 13th, 2026",
+        modifierClass: null,
+        title: 'A year since our first date💙',
+        description: "",
+        img: [
+            { src: './Images/Dates/Feb2026/feb13-1.jpeg'},
+            { src: './Images/Dates/Feb2026/feb13-2.jpeg'},
+            { src: './Images/Dates/Feb2026/feb13-3.jpeg'}
+        ]
+    },
+    {
+        date: "March 7th, 2026",
+        modifierClass: null,
+        title: 'Golf together',
+        description: "",
+        img: [
+            { src: './Images/Dates/March2026/march7-1.jpeg'},
+            { src: './Images/Dates/March2026/march7-2.jpeg'}
+            
+        ]
+    },
+    {
+        date: "March 9th, 2026",
+        modifierClass: null,
+        title: 'A day with Sheppy',
+        description: "I got to hang out with Sheppy allll day and you helped me so much coming home to help feed him and put him down for naps",
+        img: [
+            { src: './Images/Dates/March2026/march9-1.jpeg'},
+            { src: './Images/Dates/March2026/march9-2.jpeg'},
+            { src: './Images/Dates/March2026/march9-3.jpeg'},
+            { src: './Images/Dates/March2026/march9-4.jpeg'}
+            
+        ]
+    },
+    {
+        date: "March 28th, 2025",
+        modifierClass: null,
+        title: '',
+        description: "What a year together baby💙 You are my best friend. You make my life better. You make me better. I am thankful for you everyday. I love you 3000",
+        img: [
+            { src: './Images/Dates/March2026/march28.jpeg'}
+            
+        ]
+    }
 
 ]
 

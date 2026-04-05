@@ -5,7 +5,7 @@ const timelineCardsContainer = document.querySelector('#timeline-cards-container
 
 
 const renderTimeline = () => {
-    const renderedDates = dates.map(date => {
+    const renderedDates = dates.map((date, index) => {
         if (date.modifierClass) {
             let id = 0
             const imgAndDesc = date.img.map(img => {
@@ -30,13 +30,11 @@ const renderTimeline = () => {
                     </div>
                 </div>`
         }else {
-            let id = 0;
             const dateId = convertDate(date.date)
             const imgAndDesc = date.img.map(img => {
-                id++
-                return `<img src="${img.src}" alt="" id="${dateId}-${id}" width="768"></img>`
+                return `<img src="${img.src}" alt=""  width="768"></img>`
             }).join("");
-            return `<div class="timeline__section">
+            return `<div class="timeline__section" id="${dateId}-${index}">
                         <div class="timeline__card">
                             <p class="timeline__card-date">${date.date}</p>
                             <h2 class="timeline__card-title">${date.title}</h3>
@@ -67,7 +65,7 @@ const convertDate = (dateStr) => {
     const year = date.getFullYear();
     const month = (date.getMonth() + 1).toString().padStart(2, '0');
     const day = date.getDate().toString().padStart(2, '0')
-    return `${day}-${month}-${year}`
+    return `${month}-${year}`
 }
 
 
