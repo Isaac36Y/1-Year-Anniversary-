@@ -79,7 +79,7 @@
             </div>
     
         </header>
-        <div id="spotify-embed" style="width: 300px; height: 80px;"></div>
+        <audio id="audio-player" preload="auto"></audio>
         <main class="timeline" id="timeline">
             <div class="timeline__center-divider"></div>
             <div class="timeline__cards-container" id="timeline-cards-container">
@@ -87,27 +87,6 @@
             </div>
         </main>
     </div>
-    <script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
-    <script>
-        window.onSpotifyIframeApiReady = (IFrameAPI) => {
-            console.log('Spotify API ready', IFrameAPI);
-            const element = document.getElementById('spotify-embed');
-            const options = { uri: 'spotify:playlist:5SRjwn7RPH5CjiUJJ8WnbG' };
-            IFrameAPI.createController(element, options, (controller) => {
-                console.log('controller created');
-                window.spotifyController = controller;
-
-                setTimeout(() => {
-        console.log('loading status:', controller.loading);
-        window.spotifyReady = true;
-    }, 3000);
-            controller.onPlayerReady = () => {
-                console.log('player is ready');
-                window.spotifyReady = true;
-            };
-            });
-        };
-    </script>
     <script src="./JS/script.js" type="module"></script>
 
 </body>

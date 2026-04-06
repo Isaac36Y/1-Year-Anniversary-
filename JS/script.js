@@ -197,15 +197,26 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
     const defaultSelected = navBar.querySelector('.nav__buttons.selected')
     if (defaultSelected) changeNavMonthOnclick(defaultSelected)
+    
 })
 
 
+const songs = [
+    './.vscode/Audio/m&s.mp3',
+    './.vscode/Audio/coming-up.mp3',
+    './.vscode/Audio/city.mp3'
+];
 
-document.addEventListener('click', () => {
-    if (!window.spotifyController) {
-        console.log('controller not ready yet') // 👈 tells you if its a timing issue
-        return
-    }
-  window.spotifyController.play()
-  console.log(window.spotifyController)
-}, { once: true });
+let currentSong = 0;
+const player = document.getElementById('audio-player');
+
+const playSong = (index) => {
+    player.src = songs[index];
+    player.play();
+}
+
+// when a song ends, play the next one
+player.addEventListener('ended', () => {
+    currentSong = (currentSong + 1) % songs.length;
+    playSong(currentSong);
+});
