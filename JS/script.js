@@ -149,9 +149,10 @@ const changeNavMonthOnclick = (el) => {
     // measure the clicked button and slide indicator to it
     const btnLeft = el.offsetLeft
     const btnWidth = el.offsetWidth
-    console.log(btnLeft)
+
     indicator.style.transform = `translateX(${btnLeft}px)`
     indicator.style.width = `${btnWidth}px`
+    console.log('offsetLeft:', el.offsetLeft, 'offsetParent:', el.offsetParent)
 }
 
 const getImgNaturalWidth = (src) => {
@@ -192,13 +193,19 @@ navBar.addEventListener('click', (e) => {
     changeNavMonthOnclick(button)
 })
 
-
-window.addEventListener('scroll', () => {
-
-})
-
 document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
     const defaultSelected = navBar.querySelector('.nav__buttons.selected')
     if (defaultSelected) changeNavMonthOnclick(defaultSelected)
 })
+
+
+
+document.addEventListener('click', () => {
+    if (!window.spotifyController) {
+        console.log('controller not ready yet') // 👈 tells you if its a timing issue
+        return
+    }
+  window.spotifyController.play()
+  console.log(window.spotifyController)
+}, { once: true });
