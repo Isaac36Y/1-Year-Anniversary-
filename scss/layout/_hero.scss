@@ -76,10 +76,16 @@
     justify-content: center;
     align-items: center;
     animation: heart-pump 2s linear infinite;
+    opacity: 1;
+    transition: opacity 4s ease-in;
     
     p {
         font-family: var(--ff-dancing);
         font-size: 3rem;
+    }
+
+    &.selected {
+        opacity: 0;
     }
 }
 
@@ -88,3 +94,4 @@
     50% { transform: scale(1); }
     100% { transform: scale(1.3); }
 }
+

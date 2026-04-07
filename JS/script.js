@@ -3,6 +3,49 @@ import dates from './dates.js'
 const timelineCardsContainer = document.querySelector('#timeline-cards-container');
 const navBar = document.querySelector('#nav')
 const indicator = document.querySelector('#nav-indicator')
+const player = document.getElementById('audio-player');
+const loadScreen = document.querySelector('#load')
+
+let timerDone = false;
+let pageLoaded = false;
+
+setTimeout(() => {
+    timerDone = true;
+    tryReveal();
+}, 8000);
+
+const tryReveal = () => {
+    if (timerDone && pageLoaded) {
+        const par = loadScreen.querySelector('p');
+        par.innerText = 'Click Anywhere to Begin'
+        loadScreen.addEventListener('click', () => {
+            playSong(currentSong)
+            loadScreen.classList.add('selected')
+            document.documentElement.style.overflow = 'auto'
+        })
+    }
+}
+
+const songs = [
+    './.vscode/Audio/m&s.mp3',
+    './.vscode/Audio/coming-up.mp3',
+    './.vscode/Audio/city.mp3'
+];
+
+let currentSong = 0;
+
+const playSong = (index) => {
+    player.src = songs[index];
+    player.play();
+}
+
+
+player.addEventListener('ended', () => {
+    currentSong = (currentSong + 1) % songs.length;
+    playSong(currentSong);
+});
+
+
 
 
 const renderTimeline = () => {
@@ -259,23 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 })
 
-
-const songs = [
-    './.vscode/Audio/m&s.mp3',
-    './.vscode/Audio/coming-up.mp3',
-    './.vscode/Audio/city.mp3'
-];
-
-let currentSong = 0;
-const player = document.getElementById('audio-player');
-
-const playSong = (index) => {
-    player.src = songs[index];
-    player.play();
-}
-
-
-player.addEventListener('ended', () => {
-    currentSong = (currentSong + 1) % songs.length;
-    playSong(currentSong);
+window.addEventListener('load', () => {
+    pageLoaded = true;
+    tryReveal();
 });
