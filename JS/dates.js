@@ -301,7 +301,7 @@ const dates = [
         ]
     },
     {
-        date: "March 28th, 2025",
+        date: "March 28th, 2026",
         modifierClass: null,
         title: '',
         description: "What a year together baby💙 You are my best friend. You make my life better. You make me better. I am thankful for you everyday. I love you 3000",

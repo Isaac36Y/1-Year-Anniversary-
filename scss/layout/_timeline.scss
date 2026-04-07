@@ -82,6 +82,12 @@
                 }
             }
 
+            &:last-of-type {
+                .timeline__card {
+                    width: 100%;
+                }
+            }
+
         }
 
         .timeline__section:nth-child(even) .timeline__card  {

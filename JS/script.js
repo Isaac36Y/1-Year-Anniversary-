@@ -246,11 +246,6 @@ timelineCardsContainer.addEventListener('click', (e) => {
     }
 })
 
-navBar.addEventListener('click', (e) => {
-    const button = e.target.closest('.nav__buttons');
-    console.log(button)
-    changeNavMonthOnclick(button)
-})
 
 document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
