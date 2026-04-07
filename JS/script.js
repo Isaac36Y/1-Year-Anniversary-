@@ -72,14 +72,10 @@ const convertDate = (dateStr) => {
 
 const changeEventImg = (event, direction) => {
     const modifier = timelineCardsContainer.querySelector(`[data-event="${event}"]`)
-    console.log(modifier)
-    console.log(event)
     const slider = modifier.querySelector(`#${event}-slider`)
-    console.log(slider)
     const sliderImgs = modifier.querySelectorAll('.timeline__card-modified-slider-container > div')
     const selectedImg = [...sliderImgs].findIndex(img => img.classList.contains('selected'));
     const currentImg = sliderImgs[selectedImg]
-    console.log(currentImg)
     const newSlide = direction === 'next' 
         ? slider.querySelector(`#${event}-${selectedImg + 2}`)
         : slider.querySelector(`#${event}-${selectedImg}`)
@@ -157,11 +153,37 @@ const changeNavMonthOnclick = (el) => {
     indicator.style.width = `${btnWidth}px`
 }
 
-const changeNavMonthOnScroll = (entries, observer) => {
-    entries = document.querySelectorAll('.timeline__section, .event')
-    console.log(entries)
-}
+const updateNavOnScroll = () => {
+    const sections = timelineCardsContainer.querySelectorAll('.timeline__section, .event')
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            
+            if (entry.isIntersecting) {
+                // get the date text from either a regular or modifier card
+                const dateEl = entry.target.querySelector('.timeline__card-date, .timeline__card-modified-date')
+                if (!dateEl) return
+                console.log(entry)
+                // extract the month name from the date text e.g "June 28th, 2025" -> "June"
+                const monthName = dateEl.textContent.trim().split(' ')[0].toLowerCase()
+                console.log(monthName)
+                // find the matching nav button by its text content
+                const navButtons = navBar.querySelectorAll('.nav__buttons')
+                const matchingBtn = [...navButtons].find(btn => 
+                    btn.textContent.trim().toLowerCase() === monthName
+                )
+
+                if (matchingBtn) changeNavMonthOnclick(matchingBtn)
+            }
+        })
+    }, {
+        threshold: 0.1,
+       /*  rootMargin: '-10% 0px -60% 0px' */
+    })
+
+    sections.forEach(section => observer.observe(section))
+}
+/* entries = document.querySelectorAll('.timeline__section, .event') */
 const getImgNaturalWidth = (src) => {
     return new Promise((resolve) => {
         const img = new Image()
@@ -205,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const defaultSelected = navBar.querySelector('.nav__buttons.selected')
     if (defaultSelected) changeNavMonthOnclick(defaultSelected)
     setTimeout(() => {
-        changeNavMonthOnScroll()
-    })
+        updateNavOnScroll()
+    }, 200)
     
     
 })

@@ -190,7 +190,7 @@ const dates = [
         ]
     },
     {
-        date: "November 14th - 17th, 2025",
+        date: "November 14th, 2025",
         modifierClass: 'san-diego',
         title: 'San Diego!!',
         description: null,
