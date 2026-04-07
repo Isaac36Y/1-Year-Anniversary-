@@ -79,7 +79,6 @@
                             transition: opacity 0.6s ease;
                             font-size: 1.3rem;
                             background-color: rgba(255, 255, 255, 0.8);
-                            border-radius: 5rem; 
                         }
                         &.selected {
                             transform: translate(0) rotate(0deg) scale(1) rotateY(0);

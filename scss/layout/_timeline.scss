@@ -41,6 +41,7 @@
                 &-imgs {
                     padding-block-end: 0.5rem;
                     display: flex;
+                    align-items: center;
                     overflow: scroll;
                     ::-webkit-scrollbar {
                         display: none;

@@ -187,20 +187,21 @@ const updateNavOnScroll = () => {
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            
             if (entry.isIntersecting) {
-                // get the date text from either a regular or modifier card
                 const dateEl = entry.target.querySelector('.timeline__card-date, .timeline__card-modified-date')
                 if (!dateEl) return
-                console.log(entry)
-                // extract the month name from the date text e.g "June 28th, 2025" -> "June"
-                const monthName = dateEl.textContent.trim().split(' ')[0].toLowerCase()
-                console.log(monthName)
-                // find the matching nav button by its text content
+
+                const dateParts = dateEl.textContent.trim().split(' ')
+                const monthName = dateParts[0].toLowerCase()
+                const year = dateParts[dateParts.length - 1]
+
+                const monthNumber = (new Date(`${monthName} 1, ${year}`).getMonth() + 1).toString().padStart(2, '0')
+                
                 const navButtons = navBar.querySelectorAll('.nav__buttons')
-                const matchingBtn = [...navButtons].find(btn => 
-                    btn.textContent.trim().toLowerCase() === monthName
-                )
+                const matchingBtn = [...navButtons].find(btn => {
+                    const href = btn.closest('a')?.getAttribute('href') || ''
+                    return href.includes(`${monthNumber}-${year}`)
+                })
 
                 if (matchingBtn) changeNavMonthOnclick(matchingBtn)
             }
