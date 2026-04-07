@@ -27,9 +27,9 @@ const tryReveal = () => {
 }
 
 const songs = [
-    '../Audio/m&s.mp3',
-    '../Audio/coming-up.mp3',
-    '../Audio/city.mp3'
+    '../Audio/song1.mp3',
+    '../Audio/song2.mp3',
+    '../Audio/song3.mp3'
 ];
 
 let currentSong = 0;

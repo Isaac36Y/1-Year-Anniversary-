@@ -228,7 +228,7 @@ const dates = [
         title: '',
         description: "Shout out Jude Law as a single dad with the tiny glasses",
         img: [
-            { src: '../Images/Dates/December2025/dec6.jpeg'}
+            { src: './Images/Dates/December2025/dec6.jpeg'}
         ]
     },
     {
