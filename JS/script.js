@@ -152,8 +152,12 @@ const changeNavMonthOnclick = (el) => {
 
     indicator.style.transform = `translateX(${btnLeft}px)`
     indicator.style.width = `${btnWidth}px`
-    console.log('offsetLeft:', el.offsetLeft, 'offsetParent:', el.offsetParent)
 }
+/* 
+const changeNavMonthOnScroll = (entries, observer) => {
+    entries = document.querySelectorAll('.timeline__section, .event')
+    console.log(entries)
+} */
 
 const getImgNaturalWidth = (src) => {
     return new Promise((resolve) => {
@@ -197,6 +201,8 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
     const defaultSelected = navBar.querySelector('.nav__buttons.selected')
     if (defaultSelected) changeNavMonthOnclick(defaultSelected)
+
+    
     
 })
 
@@ -215,7 +221,7 @@ const playSong = (index) => {
     player.play();
 }
 
-// when a song ends, play the next one
+
 player.addEventListener('ended', () => {
     currentSong = (currentSong + 1) % songs.length;
     playSong(currentSong);

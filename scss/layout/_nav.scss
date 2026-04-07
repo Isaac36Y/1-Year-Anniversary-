@@ -24,6 +24,12 @@
         z-index: 0;
     }
 
+    a {
+            color: var(--accent-700);
+            
+    }
+    
+
     &__buttons {
         letter-spacing: 0.1rem;
         font-family: Quicksand;
@@ -33,16 +39,11 @@
         width: 100%;
         padding: 1rem 1rem;
         z-index: 1;
+        transition: color 0.7s ease;
 
-        a {
-            color: var(--accent-700);
-            transition: color 0.7s ease;
+        &.selected {
+            color: var(--accent-100);
         }
-
-        &.selected a {
-            color: var(--primary-100);
-        }
-
     }   
 }
 
