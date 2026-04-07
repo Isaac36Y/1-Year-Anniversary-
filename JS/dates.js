@@ -9,7 +9,7 @@ const dates = [
     {
         date: "February 15th, 2025",
         modifierClass: null,
-        title: 'Scary House',
+        title: '',
         description: "Looks like the first date went well😉 Good kisser eh?",
         img: [{ src: './Images/Dates/Feb2025/feb15.jpeg' }]
     },
@@ -19,13 +19,13 @@ const dates = [
         title: 'Upper Table Rock Hike',
         description: null,
         img: [
-            { src: 'Images/Dates/April2025/april18-hike/april18-1.jpg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April2025/april18-hike/april18-2.jpg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April2025/april18-hike/april18-4.jpg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April2025/april18-hike/april18-3.jpg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April2025/april18-hike/april18-5.jpg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April2025/april18-hike/april18-6.jpg', description: "Our wine and games night. I probably won at uno😉"},
-            { src: 'Images/Dates/April2025/april18-hike/april18-7.jpg', description: "Our wine and games night. I probably won at uno😉"}
+            { src: 'Images/Dates/April2025/april18-hike/april18-1.jpg', description: "Our first hike together😚"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-2.jpg', description: "Alexa, play 'Isn't she lovely' by Stevie Wonder"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-4.jpg', description: ""},
+            { src: 'Images/Dates/April2025/april18-hike/april18-3.jpg', description: ""},
+            { src: 'Images/Dates/April2025/april18-hike/april18-5.jpg', description: "Everything the light touches is our kingdom"},
+            { src: 'Images/Dates/April2025/april18-hike/april18-6.jpg', description: ""},
+            { src: 'Images/Dates/April2025/april18-hike/april18-7.jpg', description: "💚"}
         ]
     },
     {
@@ -62,8 +62,8 @@ const dates = [
             { src: 'Images/Dates/June2025/june26camping/camping-5.jpeg', description: ""},
             { src: 'Images/Dates/June2025/june26camping/camping-6.jpeg', description: ""},
             { src: 'Images/Dates/June2025/june26camping/camping-7.jpeg', description: ""},
-            { src: 'Images/Dates/June2025/june26camping/camping-8.jpeg', description: ""},
-            { src: 'Images/Dates/June2025/june26camping/camping-9.jpeg', description: ""},
+            { src: 'Images/Dates/June2025/june26camping/camping-8.jpeg', description: "Happy boy"},
+            { src: 'Images/Dates/June2025/june26camping/camping-9.jpeg', description: "Happy boy"},
             { src: 'Images/Dates/June2025/june26camping/camping-10.jpeg', description: ""},
             { src: 'Images/Dates/June2025/june26camping/camping-11.jpeg', description: ""},
             { src: 'Images/Dates/June2025/june26camping/camping-12.jpeg', description: ""},

@@ -117,6 +117,9 @@ const modifierCardsStack = (el) => {
     const sliderContainer = modifier.querySelector('.timeline__card-modified-slider-container');
     const rightStack = sliderContainer.querySelectorAll('.timeline__img-desc.right-stack');
     const leftStack = sliderContainer.querySelectorAll('.timeline__img-desc.left-stack');
+    const descriptions = sliderContainer.querySelectorAll('.timeline__img-desc > .timeline__card-modified-par')
+    
+    descriptions.forEach(desc => desc.innerText.length >= 1 ? desc.style.maskImage = "linear-gradient(to right, transparent, black 8%, black 92%, transparent)" : '')
     
     for (let i = 0; i < rightStack.length; i++) {
         if (rightStack.length >= 19) {
@@ -137,6 +140,32 @@ const modifierCardsStack = (el) => {
         leftStack[i].style.zIndex = `${[i]}`;
     }
     
+}
+
+const adjustImgOrientations = () => {
+    const imgs = timelineCardsContainer.querySelectorAll('.timeline__card-imgs img')
+    
+    imgs.forEach(img => {
+        const applyOrientation = () => {
+            if (img.naturalWidth > img.naturalHeight) {
+                // horizontal image — flip width and height
+                img.style.width = '38rem'
+                img.style.height = '30rem'
+            } else {
+                // vertical image — keep default
+                img.style.width = '30rem'
+                img.style.height = '38rem'
+            }
+        }
+
+        if (img.complete) {
+            // image already loaded (cached)
+            applyOrientation()
+        } else {
+            // wait for image to load before checking dimensions
+            img.addEventListener('load', applyOrientation)
+        }
+    })
 }
 
 const changeNavMonthOnclick = (el) => {
@@ -228,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (defaultSelected) changeNavMonthOnclick(defaultSelected)
     setTimeout(() => {
         updateNavOnScroll()
+        adjustImgOrientations()
     }, 200)
     
     
