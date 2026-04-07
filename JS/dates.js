@@ -50,7 +50,7 @@ const dates = [
         img: [{ src: 'Images/Dates/May2025/may26.jpeg' }]
     },
     {
-        date: "June 26th - June 29th, 2025",
+        date: "June 26th, 2025",
         modifierClass: 'camping-trip',
         title: 'Camping Trip',
         description: null,

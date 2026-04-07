@@ -7,6 +7,7 @@ const indicator = document.querySelector('#nav-indicator')
 
 const renderTimeline = () => {
     const renderedDates = dates.map((date, index) => {
+        const dateId = convertDate(date.date)
         if (date.modifierClass) {
             let id = 0
             const imgAndDesc = date.img.map(img => {
@@ -17,7 +18,7 @@ const renderTimeline = () => {
                         </div>
                         `
             }).join("")
-            return `<div class="timeline__card-section__${date.modifierClass} event" id="${date.modifierClass}">
+            return `<div class="timeline__card-section__${date.modifierClass} event" data-event="${date.modifierClass}" id="${dateId}-${index}">
                     <div class="timeline__card-modified ">
                         <p class="timeline__card-modified-date">${date.date}</p>
                         <h2 class="timeline__card-modified-title">${date.title}</h3>
@@ -31,7 +32,6 @@ const renderTimeline = () => {
                     </div>
                 </div>`
         }else {
-            const dateId = convertDate(date.date)
             const imgAndDesc = date.img.map(img => {
                 return `<img src="${img.src}" alt=""  width="768"></img>`
             }).join("");
@@ -71,8 +71,11 @@ const convertDate = (dateStr) => {
 
 
 const changeEventImg = (event, direction) => {
-    const modifier = timelineCardsContainer.querySelector(`#${event}`)
+    const modifier = timelineCardsContainer.querySelector(`[data-event="${event}"]`)
+    console.log(modifier)
+    console.log(event)
     const slider = modifier.querySelector(`#${event}-slider`)
+    console.log(slider)
     const sliderImgs = modifier.querySelectorAll('.timeline__card-modified-slider-container > div')
     const selectedImg = [...sliderImgs].findIndex(img => img.classList.contains('selected'));
     const currentImg = sliderImgs[selectedImg]
@@ -114,7 +117,7 @@ const selectFirstImgInEvents = () => {
 }
 
 const modifierCardsStack = (el) => {
-    const modifier = timelineCardsContainer.querySelector(`#${el}`)
+    const modifier = timelineCardsContainer.querySelector(`[data-event="${el}"]`)
     const sliderContainer = modifier.querySelector('.timeline__card-modified-slider-container');
     const rightStack = sliderContainer.querySelectorAll('.timeline__img-desc.right-stack');
     const leftStack = sliderContainer.querySelectorAll('.timeline__img-desc.left-stack');
@@ -153,11 +156,11 @@ const changeNavMonthOnclick = (el) => {
     indicator.style.transform = `translateX(${btnLeft}px)`
     indicator.style.width = `${btnWidth}px`
 }
-/* 
+
 const changeNavMonthOnScroll = (entries, observer) => {
     entries = document.querySelectorAll('.timeline__section, .event')
     console.log(entries)
-} */
+}
 
 const getImgNaturalWidth = (src) => {
     return new Promise((resolve) => {
@@ -201,7 +204,9 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTimeline()
     const defaultSelected = navBar.querySelector('.nav__buttons.selected')
     if (defaultSelected) changeNavMonthOnclick(defaultSelected)
-
+    setTimeout(() => {
+        changeNavMonthOnScroll()
+    })
     
     
 })

@@ -4,8 +4,8 @@
     background: var(--accent-100);
     background: linear-gradient(to top, var(--accent-100), var(--primary-100));
     border-radius: 5rem;
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
     position: fixed;
     top: 2rem;
     z-index: 50;
@@ -24,19 +24,13 @@
         z-index: 0;
     }
 
-    a {
-            color: var(--accent-700);
-            
-    }
-    
-
     &__buttons {
         letter-spacing: 0.1rem;
         font-family: Quicksand;
         color: var(--accent-700);
         font-weight: 500;
         position: relative;
-        width: 100%;
+
         padding: 1rem 1rem;
         z-index: 1;
         transition: color 0.7s ease;
