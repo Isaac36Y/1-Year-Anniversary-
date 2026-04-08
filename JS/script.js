@@ -22,6 +22,7 @@ const tryReveal = () => {
             playSong(currentSong)
             loadScreen.classList.add('selected')
             document.documentElement.style.overflow = 'auto'
+            document.documentElement.style.overflowX = 'hidden'
         })
     }
 }
