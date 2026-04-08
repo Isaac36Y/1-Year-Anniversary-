@@ -16,7 +16,9 @@
 html{
   scroll-snap-type: y proximity;
   scroll-behavior: smooth;
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 body {
@@ -24,6 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: quicksand;
   color: var(--accent-700);
+  width: 100vw;
 }
 
 img, picture, video, canvas, svg {
